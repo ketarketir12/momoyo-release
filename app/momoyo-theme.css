@@ -1,0 +1,33 @@
+/* MOMOYO peach blossom campaign. Transparent OBS canvas is preserved. */
+:root{--pink:#efb1ad;--coral:#e7857e;--red:#d92531;--ink:#713a3d;--paper:#fffaf8}
+body{color:var(--ink);font-family:'Arial Rounded MT Bold','Trebuchet MS',Arial,sans-serif}
+body:not(.obs-overlay){background:#fff7f5}
+header{border-color:#f1ceca}header strong{color:var(--red);letter-spacing:-1px}header small{color:#8e5657}
+button{border-color:#e1aaa5;color:#843e43;background:var(--paper)}button:hover{background:#fbe0dc}
+.stage,.obs-overlay .panel{background:var(--pink);border:5px solid var(--coral);border-radius:28px;outline:none;box-shadow:0 5px 14px #66262b20;isolation:isolate}
+.stage:before,.stage:after,.obs-overlay .panel:before,.obs-overlay .panel:after{content:'';position:absolute;width:105px;height:105px;border:0;border-radius:0;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 120 120'%3E%3Cg fill='%23fff1ec'%3E%3Cellipse cx='60' cy='33' rx='19' ry='27'/%3E%3Cellipse cx='60' cy='33' rx='19' ry='27' transform='rotate(72 60 60)'/%3E%3Cellipse cx='60' cy='33' rx='19' ry='27' transform='rotate(144 60 60)'/%3E%3Cellipse cx='60' cy='33' rx='19' ry='27' transform='rotate(216 60 60)'/%3E%3Cellipse cx='60' cy='33' rx='19' ry='27' transform='rotate(288 60 60)'/%3E%3C/g%3E%3Ccircle cx='60' cy='60' r='18' fill='%23e78c87'/%3E%3Ccircle cx='60' cy='60' r='7' fill='%23f7c78a'/%3E%3C/svg%3E") center/contain no-repeat;left:-28px;bottom:-27px;transform:rotate(-18deg);pointer-events:none;z-index:0}
+.stage:after,.obs-overlay .panel:after{left:auto;right:-25px;bottom:-25px;transform:rotate(24deg);width:90px;height:90px}
+.stage>*,.obs-overlay .panel>*{position:relative;z-index:1}
+.stage h1,.obs-overlay .title{color:#fff;font-weight:900;text-shadow:0 3px 0 #c8676833;letter-spacing:-1.5px}
+.stage .eyebrow,.obs-overlay .brand{color:#fff;font-weight:900}
+.stage .subtitle{color:#7d323b;font-weight:700}
+.stage .tile,.obs-overlay .tile{background:#fffaf8;color:#733b3e;border-radius:9px;font-weight:700}
+.stage .tile:nth-child(3n+2),.obs-overlay .tile:nth-child(3n+2){background:#fbd7d2}
+.stage .tile:nth-child(3n),.obs-overlay .tile:nth-child(3n){background:#fce9e4}
+.stage .tile.active,.obs-overlay .tile.active{background:var(--red);color:white;border-color:#fff;box-shadow:none;transform:none}
+.stage .result,.obs-overlay .result{background:var(--paper);border-radius:16px;padding:16px 20px;margin-top:18px;color:#8b3f45}
+.stage .result .eyebrow,.obs-overlay .result .eyebrow{color:#bc2534;font-weight:800;letter-spacing:2px}
+.stage .winner,.obs-overlay .winner{font-family:'Arial Rounded MT Bold','Trebuchet MS',Arial,sans-serif;font-weight:900;color:var(--red)}
+.stage .prize,.obs-overlay .prize{color:#9b454b}
+.draw{background:var(--red);color:white;border:2px solid white}.draw:hover{background:#b91d2b}
+.stage .count,.stage .hint{color:#793f45}.stage .roster-tools input,.stage .roster-tools select{border-color:#d6918f;background:#fffaf8;color:#713a3d}
+aside .panel{border-color:#f0c9c5}textarea,input[type=text]{border-color:#d6a6a1}aside h2{color:#9e333e}
+.obs-overlay .panel{top:90px;padding:20px 25px 24px}
+.obs-overlay .brand{font-size:24px;letter-spacing:2px}
+.obs-overlay .title{font-size:46px;margin:6px 0 17px}
+.obs-overlay .tile{height:58px;font-size:23px}
+.obs-overlay .dense .tile{height:36px;font-size:14px}
+.obs-overlay .winner{font-size:48px;margin:6px 0}
+.obs-overlay .prize{font-size:28px}
+.obs-overlay .result{padding:13px 20px;margin-top:15px}
+.obs-overlay .hint{color:#8b3f45}

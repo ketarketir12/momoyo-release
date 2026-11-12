@@ -1,0 +1,10 @@
+MOMOYO Live v1.4.23 | Mulai cepat
+
+1. Ekstrak semua isi ZIP dan buka folder MOMOYO Live.
+2. Klik dua kali MOMOYO Live.cmd untuk membuka panel.
+3. Buka OBS. Buka Setup & Pembaruan, lalu klik Tampilkan tutorial setup.
+
+Setelah acara, klik Tutup MOMOYO Live.cmd.
+Jika MOMOYO dari folder lain masih berjalan, MOMOYO Live.cmd akan bertanya apakah sesi itu boleh dihentikan.
+Pemasang (Setup .exe): memasang per pengguna, memperbarui di tempat tanpa menghapus data, dan menyediakan Uninstall di Pengaturan > Aplikasi.
+Panduan lengkap ada di app\BACA-DULU.txt.

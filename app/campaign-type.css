@@ -1,0 +1,25 @@
+/* Rounded, condensed campaign typography. Local font: no web connection needed. */
+@font-face{font-family:'MOMOYO Campaign';src:url('Fredoka.ttf') format('truetype');font-weight:300 700;font-stretch:75% 125%;font-display:swap}
+.obs-overlay .brand,.stage>.eyebrow,header strong{font-family:'MOMOYO Campaign',Arial,sans-serif;font-weight:700;font-variation-settings:'wdth' 100;letter-spacing:1px}
+.obs-overlay .title,.stage h1{font-family:'MOMOYO Campaign',Arial,sans-serif;font-weight:700;font-stretch:80%;font-variation-settings:'wdth' 80;letter-spacing:-.7px;line-height:1.08}
+.obs-overlay .title{font-size:35px;margin:6px 0 14px}
+.obs-overlay .winner,.stage .winner{font-family:'MOMOYO Campaign',Arial,sans-serif;font-weight:700;font-stretch:90%;font-variation-settings:'wdth' 90;letter-spacing:-.5px;line-height:1.12}
+.obs-overlay .winner{font-size:39px}
+.obs-overlay .tile,.stage .tile{font-family:'MOMOYO Campaign',Arial,sans-serif;font-weight:500;font-variation-settings:'wdth' 95;letter-spacing:0}
+.obs-overlay .prize,.stage .prize,.obs-overlay .result .eyebrow{font-family:'MOMOYO Campaign',Arial,sans-serif;font-weight:600;font-variation-settings:'wdth' 95}
+.obs-overlay .prize{font-size:21px}.obs-overlay .result .eyebrow{font-size:13px;letter-spacing:1.2px}
+/* Legacy announcement styles (no longer applied: symbolic reveals now share the random-draw pipeline). */
+.stage.announcing .result,.obs-overlay.announcing .result{animation:announcement-card .6s ease-out}
+.stage.announcing .winner,.obs-overlay.announcing .winner{animation:announcement-count .6s ease-out}
+.stage.celebrating .result,.obs-overlay.celebrating .result{animation:announcement-card .7s cubic-bezier(.16,1,.3,1)}
+.stage.celebrating .winner,.obs-overlay.celebrating .winner{animation:announcement-winner .9s cubic-bezier(.16,1.4,.3,1)}
+.stage.celebrating .tile.active,.obs-overlay.celebrating .tile.active{animation:announcement-highlight 1s ease-in-out 3}
+.stage.celebrating .prize,.obs-overlay.celebrating .prize{animation:announcement-prize 1.1s ease-out}
+.announcement-petal{position:absolute;top:0;width:12px;height:19px;border-radius:85% 20% 80% 30%;background:linear-gradient(120deg,#fff7ef,#f28f9e);pointer-events:none;z-index:8;animation:announcement-petals 3.2s ease-in forwards}
+@keyframes announcement-card{from{opacity:0;transform:translateY(14px) scale(.96)}to{opacity:1;transform:translateY(0) scale(1)}}
+@keyframes announcement-count{from{opacity:.3;transform:scale(1.5)}to{opacity:1;transform:scale(1)}}
+@keyframes announcement-winner{0%{opacity:0;transform:scale(.55)}65%{opacity:1;transform:scale(1.12)}100%{transform:scale(1)}}
+@keyframes announcement-highlight{50%{box-shadow:0 0 0 3px #fff4cd,0 0 18px #df8b67;filter:brightness(1.12)}}
+@keyframes announcement-prize{0%,40%{opacity:0;transform:translateY(9px)}100%{opacity:1;transform:translateY(0)}}
+@keyframes announcement-petals{0%{opacity:0;transform:translateY(0) rotate(0)}10%{opacity:1}100%{opacity:0;transform:translate(60px,650px) rotate(280deg)}}
+@media(prefers-reduced-motion:reduce){.stage.announcing .result,.stage.announcing .winner,.stage.celebrating .result,.stage.celebrating .winner,.stage.celebrating .prize,.stage.celebrating .tile.active,.obs-overlay.announcing .result,.obs-overlay.announcing .winner,.obs-overlay.celebrating .result,.obs-overlay.celebrating .winner,.obs-overlay.celebrating .prize,.obs-overlay.celebrating .tile.active{animation:none}.announcement-petal{display:none}}

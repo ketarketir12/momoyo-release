@@ -1,0 +1,31 @@
+name: build-and-test
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  windows:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+
+      - name: Bangun ZIP portabel dan pemasang (csc .NET Framework)
+        run: python tools/build.py
+
+      - name: Uji pasang, upgrade, uninstall, dan server
+        run: python tests/run_tests.py
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: momoyo-live-${{ github.sha }}
+          path: |
+            dist/MOMOYO-Live-Setup-*-win-x64.exe
+            dist/MOMOYO-Portable-Windows-x64.zip
+            dist/SHA256SUMS.txt
+          if-no-files-found: error

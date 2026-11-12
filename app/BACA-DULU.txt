@@ -1,0 +1,137 @@
+MOMOYO — CAP-CIP-CUP WIN + PEACH PODIUM  (versi portabel 1.4.23)
+Undian giveaway untuk live, dengan overlay transparan untuk OBS.
+
+KEBUTUHAN
+  - Windows 10/11 64-bit (Intel/AMD), Google Chrome atau Microsoft Edge, OBS Studio.
+  - Python portabel sudah disertakan. Ekstrak seluruh isi ZIP.
+  - Tidak perlu internet saat aplikasi berjalan.
+
+PERTAMA KALI
+  1. Ekstrak ZIP ke folder tetap, misalnya C:\MOMOYO.
+     Jangan di dalam OneDrive atau Program Files (sinkronisasi/izin bisa mengganggu).
+  2. Klik ganda MOMOYO Live.cmd. Halaman operator terbuka otomatis di
+     http://127.0.0.1:8766/ . Jika Windows meminta izin jaringan, izinkan (hanya lokal).
+  3. Di OBS: Sources > + > Browser, lalu pilih salah satu cara (hasilnya sama):
+     A) Dengan file (tanpa mengetik alamat):
+        Local file         : HIDUP, lalu Browse dan pilih OBS-OVERLAY.html di folder ini
+     B) Dengan alamat:
+        URL                : http://127.0.0.1:8766/overlay.html , Local file MATI
+     Untuk keduanya:
+        Width / Height     : 1080 / 600
+        Shutdown source when not visible        : MATI
+        Refresh browser when scene becomes active: MATI
+     Letakkan di atas sumber kamera host. Latar belakang transparan otomatis.
+     Jangan memilih overlay.html atau index.html sebagai Local file, dan jangan memasang
+     halaman operator (index.html) di OBS. Server tetap harus jalan (MOMOYO Live.cmd).
+  4. Di halaman operator: tempel peserta (satu nama atau ID per baris), isi hadiah
+     dengan format  Nama hadiah | jumlah , lalu klik Simpan daftar.
+
+SETIAP KALI LIVE
+  - Klik MOMOYO Live.cmd. Selesai live: klik Tutup MOMOYO Live.cmd.
+  - Gunakan SATU tab operator dan biarkan tetap terlihat. Tab kedua terkunci otomatis;
+    gunakan tombol "Jadikan tab ini operator" kalau memang ingin pindah.
+  - Mode "Acak": klik ACAK! untuk memilih dari peserta.
+  - Mode "Simbolis": isi panel Pengumuman simbolis dengan  Nama | Hadiah  per baris
+    sesuai urutan, klik Simpan pemenang resmi, lalu UMUMKAN PEMENANG untuk tiap pemenang.
+    Tampilan dan animasinya sama dengan undian acak.
+  - Mode presentasi: tampilan bersih untuk siaran. Tombol Esc untuk kembali.
+
+PEACH PODIUM
+  - Jika versi sebelumnya masih berjalan, klik Tutup MOMOYO Live.cmd, lalu MOMOYO Live.cmd.
+  - Buka tab Peach Podium di panel operator. Isi hingga tiga username dan gunakan panah
+    untuk mengatur urutan. Periksa pratinjau, lalu klik Terapkan ke OBS dan Tampilkan.
+  - Tambahkan Browser Source OBS untuk http://127.0.0.1:8766/podium.html?v=center-obs-2
+    dengan Local file MATI dan ukuran 1080 × 420. Matikan Shutdown source when not
+    visible dan Refresh browser when scene becomes active. Posisikan di atas kamera.
+  - Saat podium sedang tampil, Terapkan ke OBS otomatis merayakan peserta yang baru
+    naik ke peringkat pertama.
+    Kosongkan draf lalu Terapkan ke OBS untuk menghapus ranking yang tersimpan.
+  - Ranking yang diterapkan dan status tampil disimpan di podium-state.json.
+  - Komponen tampilan dan animasi berjalan offline. Folder vendor berisi Open Props
+    1.7.16, ikon Lucide 0.468.0, Motion 12.23.24, dan lisensinya.
+
+MODE LITE ROULETTE
+  - Pilih Lite pada Mode acara, lalu simpan nama pemenang (satu per baris).
+    Daftar lama Nama | Hadiah juga bisa ditempel. Isi atau ubah hadiah yang belum
+    diumumkan di panel Hadiah Mode Lite, lalu klik Simpan hadiah.
+    Gunakan Isi hadiah yang sama untuk mengisi semua pemenang yang belum diumumkan.
+  - Klik UMUMKAN PEMENANG untuk langsung menampilkan nama dan hadiah jika diisi di OBS.
+    Mode Lite memakai urutan dan riwayat yang sama dengan mode Simbolis.
+  - Klik Tampilkan daftar pemenang untuk menayangkan hingga 10 nama sekaligus.
+    Durasi per giliran bisa diatur, dengan nilai awal 5 detik. Pengumuman baru
+    menghentikan daftar bergilir.
+  - Di Daftar pemenang bergilir, pilih Sudah diumumkan atau Input manual.
+    Daftar manual tidak mengubah antrean atau riwayat pengumuman.
+
+SETUP OBS DAN PEMBARUAN
+  - Buka Setup & Pembaruan di panel operator, lalu klik Tutorial setup.
+  - Aktifkan WebSocket Server dan autentikasi di OBS. Masukkan port dan password.
+    Pilih scene dan klik Deteksi / tambahkan overlay. Source baru mulai tersembunyi.
+  - Untuk update, isi GITHUB-REPO.txt dengan pemilik/nama-repo GitHub Releases publik.
+    Gunakan tag vX.Y.Z dan unggah aset MOMOYO-Portable-Windows-x64.zip.
+  - Di panel, klik Cek pembaruan, Unduh, lalu Pasang dan mulai ulang setelah LIVE.
+  - Jika pindah dari v1.4.8 ke folder baru, hentikan versi lama, lalu salin
+    giveaway-state.json dan podium-state.json dari folder lama ke folder MOMOYO baru
+    sebelum pertama kali menjalankan MOMOYO Live.cmd. Launcher akan menyalinnya ke data.
+
+DATA
+  - Daftar dan hasil tersimpan di giveaway-state.json (dibuat otomatis) dan di browser.
+  - Memindahkan data ke komputer lain: salin giveaway-state.json ke folder aplikasi
+    di komputer tujuan sebelum klik MOMOYO Live.cmd.
+  - Tombol Ekspor menyimpan hasil sebagai CSV.
+
+MASALAH UMUM
+  - "Server tidak bisa dimulai" / port dipakai: klik Tutup MOMOYO Live.cmd, lalu MULAI lagi.
+    Jika masih gagal, program lain memakai port 8766.
+  - OBS menampilkan "Operator belum terhubung": buka halaman operator dan biarkan tetap terbuka.
+  - Overlay tidak berubah setelah update: klik kanan Browser Source > Refresh cache of current page.
+  - Daftar peserta besar: gunakan 20 nama per halaman agar terbaca di ponsel.
+
+CATATAN VERSI
+  1.4.23
+  - Panel operator dibuka sebagai jendela aplikasi (Edge atau Chrome, tanpa tab dan kolom alamat).
+    Jika keduanya tidak ditemukan, panel dibuka sebagai tab browser seperti biasa.
+  - Menutup jendela panel memunculkan dialog: matikan MOMOYO (Ya) atau buka panel lagi (Tidak).
+    Bila OBS masih memuat overlay, dialog memberi peringatan LIVE. Memuat ulang panel tidak memicu dialog.
+  - Tombol Matikan MOMOYO di Setup & Pembaruan.
+  - Pemasang: uninstall dua langkah (lepas, lalu hapus data atau tidak), teks "Pasang ulang" untuk versi sama.
+  1.4.22
+  - Pembaruan satu tombol siap dipakai: GITHUB-REPO.txt sudah berisi repo rilis (ketarketir12/momoyo-release).
+  - Versi di Pengaturan > Aplikasi ikut diperbarui setelah pembaruan lewat tombol.
+  - Pemasang tidak lagi menurunkan versi tanpa konfirmasi (mode /S menolaknya kecuali /force).
+  1.4.21
+  - MOMOYO Live.cmd kini bertanya sebelum menghentikan MOMOYO dari folder lain, lalu mengganti sesinya.
+    Jika panel operator sedang terbuka di sesi itu, peringatan ditampilkan lebih tegas.
+  - Pemasang (Setup .exe): per pengguna tanpa admin, memperbarui di tempat (data tetap), menghentikan
+    server lama otomatis, menambah Start Menu "Tutup MOMOYO Live", dan entri Uninstall di Pengaturan > Aplikasi.
+  - Uninstall MOMOYO Live.exe: pilihan menyimpan atau menghapus data (peserta, status giveaway).
+  1.4.20
+  - Nama paket dan peluncur: MOMOYO Live.
+  1.4.20
+  - Tutup MOMOYO Live.cmd bisa menghentikan server MOMOYO aktif dari folder versi lain.
+  1.4.20
+  - Tahap 3 panel operator: versi server tampil di sebelah Setup & Pembaruan (tab Roulette dan Peach Podium).
+  - Pemilih mode Acak / Simbolis / Lite: judul di atas, tiga tombol sama besar, satu baris penjelasan per mode.
+  - Hierarki tombol: satu aksi utama (solid), pendamping (outline), penghapus (merah). Panel kontrol tayang
+    ada di kiri pada layar lebar dan tampil lebih dulu pada layar sempit.
+  - Dialog Setup & Pembaruan: judul dan Tutup sejajar, tetap terlihat saat digulir, fokus keyboard jelas.
+  - Ringkasan kesiapan Acak: peserta yang memenuhi syarat dan stok hadiah, dengan alasan jika belum siap.
+  - Status tayang Lite: pengumuman satu nama, rekap bergilir, atau overlay tersembunyi; dibedakan antara
+    data tersimpan, terkirim ke overlay, dan terverifikasi di OBS (overlay di OBS melapor balik ke server).
+  - Bahasa tombol, pesan, toast, dan konfirmasi diselaraskan (sebut penyebab dan langkah berikutnya).
+  1.4.9
+  - Setup OBS WebSocket, tutorial bergambar, dan updater GitHub Releases.
+  1.4.8
+  - Rekap Lite: hingga 10 nama sekaligus, animasi kotak, dan durasi per giliran.
+  1.4.6
+  - Halaman nama berganti otomatis setiap 5 detik (sebelumnya 6 detik) saat opsi
+    "Tampilkan halaman bergantian" dicentang.
+  1.4.5
+  - Pemenang simbolis yang namanya tidak ada di daftar peserta kini tampil di halaman dan posisi
+    acak pada papan nama, tidak lagi selalu di tempat yang sama.
+  1.4.4
+  - Menambah pemenang simbolis di tengah acara tidak lagi mengulang urutan dari awal.
+    Pemenang yang sudah diumumkan terkunci. Tombol "Ulangi dari awal" tersedia bila perlu.
+  - Overlay OBS dan halaman operator tidak lagi macet jika server sempat tidak menjawab.
+  Saat berpindah versi: klik Tutup MOMOYO Live.cmd dari folder versi lama (bila masih jalan),
+  lalu MOMOYO Live.cmd dari folder ini. Refresh Browser Source OBS sekali.

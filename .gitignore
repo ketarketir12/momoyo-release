@@ -1,0 +1,10 @@
+dist/
+__pycache__/
+*.pyc
+# data operator dan berkas runtime tidak boleh ikut repo
+app/data/
+app/launcher.log
+app/active.json
+app/staged.json
+app/update-status.json
+app/versions/
